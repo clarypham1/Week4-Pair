@@ -10,25 +10,24 @@ const {
   deleteTour,
 } = require("../controllers/tourControllers"); 
 
-// Middleware to parse JSON
-tourRouter.use(express.json());
+
 
 // ROUTES
 // GET /tours
-tourRouter.get("/tours", getAllTours);
-tourRouter.get("/tours", getAllTours);
+tourRouter.get("/", getAllTours);
+tourRouter.get("/", getAllTours);
 
 // GET /tours/:tourId
-tourRouter.get("/tours/:tourId", getTourById);
+tourRouter.get("/:tourId", getTourById);
+tourRouter.use(auth); // Apply the auth middleware to all routes below
 
-tourRouter.use(auth);
 // POST /tours
-tourRouter.post("/tours", createTour);
+tourRouter.post("/", createTour);
 // PUT /tours/:tourId
-tourRouter.put("/tours/:tourId", updateTour);
+tourRouter.put("/:tourId", updateTour);
 
 // DELETE /tours/:tourId
-tourRouter.delete("/tours/:tourId", deleteTour);
+tourRouter.delete("/:tourId", deleteTour);
 
 // const port = 4000;
 // // Start the server
