@@ -1,5 +1,6 @@
 const express = require("express");
 const tourRouter = express();
+const auth = require("../middleware/auth");
 
 const {
   getAllTours,
@@ -15,13 +16,14 @@ tourRouter.use(express.json());
 // ROUTES
 // GET /tours
 tourRouter.get("/tours", getAllTours);
-
-// POST /tours
-tourRouter.post("/tours", createTour);
+tourRouter.get("/tours", getAllTours);
 
 // GET /tours/:tourId
 tourRouter.get("/tours/:tourId", getTourById);
 
+tourRouter.use(auth);
+// POST /tours
+tourRouter.post("/tours", createTour);
 // PUT /tours/:tourId
 tourRouter.put("/tours/:tourId", updateTour);
 

@@ -1,5 +1,6 @@
 const express = require("express");
 const userRouter = express();
+const auth = require("../middleware/auth");
 
 const {
   getAllUsers,
