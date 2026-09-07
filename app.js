@@ -1,4 +1,6 @@
 const express = require("express");
+const morgan = require('morgan');
+
 
 const app = express();
 
@@ -29,6 +31,9 @@ app.use('/api/users', userRouter);
 
 //  Use the tourRouter for all /tours routes
 app.use('/api/tours', tourRouter);
+
+// Morgan
+app.use(morgan('tiny'));
 
 // ROUTES
 // GET /tours
