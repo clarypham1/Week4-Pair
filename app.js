@@ -32,32 +32,32 @@ app.use('/api/tours', tourRouter);
 
 // ROUTES
 // GET /tours
-app.get("/tours", getAllTours);
+app.get("/api/tours", getAllTours);
 
 // POST /tours
-app.post("/tours", createTour);
+app.post("/api/tours", createTour);
 
 // GET /tours/:tourId
-app.get("/tours/:tourId", getTourById);
+app.get("/api/tours/:tourId", getTourById);
 
 // PUT /tours/:tourId
-app.put("/tours/:tourId", updateTour);
+app.put("/api/tours/:tourId", updateTour);
 
 // DELETE /tours/:tourId
-app.delete("/tours/:tourId", deleteTour);
+app.delete("/api/tours/:tourId", deleteTour);
 
 //  Use the userRouter for all /users routes
 // app.use('/api/tours', tourRouter);
 
-app.get("/users", getAllUsers);
+app.get("/api/users", getAllUsers);
 
-app.post("/users", createUser);
+app.post("/api/users", createUser);
 
-app.get("/users/:userId", getUserById);
+app.get("/api/users/:userId", getUserById);
 
-app.put("/users/:userId", updateUser);
+app.put("/api/users/:userId", updateUser);
 
-app.delete("/users/:userId", deleteUser);
+app.delete("/api/users/:userId", deleteUser);
 
 const port = 4000;
 // Start the server
